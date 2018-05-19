@@ -1,6 +1,8 @@
 # OutcropsGeeWhiz
 Agile Geoscience Hackathon project -- 5/18-5/20, 2018
 
+Google Doc link - https://docs.google.com/document/d/1qtocbc2w58zsTUeD0vebKCMFN2Fmu7p1OyMW-Y1KUBI/edit# 
+
 ## Github Usage
 
 To get started, clone the repo:
