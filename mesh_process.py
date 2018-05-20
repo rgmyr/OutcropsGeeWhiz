@@ -75,10 +75,9 @@ def slices_from_pt_sequence(coords, pt_rgb, ptseq):
         slices[cum_dist] = {'zs': z, 'ds': d, 'clr': c} 
         cum_dist += euclidean(endpts[0], endpts[1])
 
-        # remove used vertices
+        # remove used vertices, hopefully a little quicker
         coords  = np.delete(coords, good_idxs, 0)
         pt_rgb = np.delete(pt_rgb, good_idxs, 0)
-
 
     return slices
 
