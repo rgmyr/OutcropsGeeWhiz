@@ -1,0 +1,6 @@
+*.pts
+*.stl
+*.pickle
+
+*checkpoints*
+*pycache*
