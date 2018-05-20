@@ -1,6 +1,7 @@
 *.pts
 *.stl
 *.pickle
+*.png
 
 *checkpoints*
 *pycache*
