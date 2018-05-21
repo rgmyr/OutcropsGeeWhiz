@@ -24,7 +24,7 @@ To use mesh data instead of point cloud:
 
 `notebooks/`: Jupyter notebooks. See `README` inside for more info.
 
-`models/`: `pickle`d `sklearn.ensemble.AdaBoost` model for HSV $\rightarrow$ class prediction
+`models/`: `pickle`d `sklearn.ensemble.AdaBoost` model for (HSV color) --> (sand/shale/heterolithic) classification
 
 `mesh_process.py`: Data loading + point cloud slicing + some convenience functions. Should add some things, rename, and have `PyMesh` functionality in a seperate module.
 
