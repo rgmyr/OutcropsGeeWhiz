@@ -35,17 +35,16 @@ def flatslice_pt_cloud(coords, endpts, colors=None):
         Array of [Z] coordinates of the M points between the boundary planes
     ds: np.array, shape=(M,)
         Array of horizontal recess/depth corresponding to each z-coord
+    good_idxs: np.array, shape(M,)
+        Array of row indices of chosen points in the coords array
     selected_colors: np.array, size=(M,3) or (M, 4)
-        Array of associated values from colors array -- if colors arg provided
+        Array of associated values from colors array, if arg was provided
     '''
     vec = endpts[1] - endpts[0]
     
     # select points between boundaries
     is_between = lambda v: (above_plane(endpts[0], vec, v) and below_plane(endpts[1], vec, v))
     good_idxs = np.where(np.apply_along_axis(is_between, 1, coords[:, :2]))
-
-    if len(good_idxs) == 0:
-        "NOTE: good_idxs is empty!"
 
     # compute a unit vector perpendicular to slice
     LHS_perp = np.array([-vec[1], vec[0]])
@@ -55,6 +54,7 @@ def flatslice_pt_cloud(coords, endpts, colors=None):
     try:
         recesses -= recesses.min()
     except ValueError:
+        print("ValueError caught on recesses: good_idxs is probably empty!")
         pass
 
     if colors is not None:
@@ -64,6 +64,28 @@ def flatslice_pt_cloud(coords, endpts, colors=None):
 
 
 def slices_from_pt_sequence(coords, pt_rgb, ptseq):
+    '''Generate a sequence of slices from adjacent pairs in boundary point sequence.
+
+    Parameters
+    ----------
+    coords: np.array, shape=(M, 3)
+        Array of [X,Y,Z] point coords 
+    pt_rgb: np.array, shape=(M, 3)
+        Array of [R,G,B] color values
+    pt_seq: np.array, shape=(K, 2)
+        Sequence of [X,Y] points to use as dividers for slicing the pt cloud
+
+    Returns
+    -------
+    slices
+        dict of {cumulative_dist: slice_data}, where slice_data is a
+        dict of {'ds': np.array of recesses,
+                 'zs': np.array of elevations,
+                 'clr': np.array of RGB colors}
+        All the arrays have a length equal to the number of points in the slice
+
+
+    '''
     
     slices = {}
     cum_dist = 0.0
@@ -75,7 +97,7 @@ def slices_from_pt_sequence(coords, pt_rgb, ptseq):
         slices[cum_dist] = {'zs': z, 'ds': d, 'clr': c} 
         cum_dist += euclidean(endpts[0], endpts[1])
 
-        # remove used vertices, hopefully a little quicker
+        # remove used points from the cloud, hopefully a little quicker?
         coords  = np.delete(coords, good_idxs, 0)
         pt_rgb = np.delete(pt_rgb, good_idxs, 0)
 

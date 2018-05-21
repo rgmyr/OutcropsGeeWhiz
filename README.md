@@ -1,6 +1,6 @@
 # Outcrops, Gee Whiz!
 
-3D digital outcrop models are cool. **Gee Whiz** is it fun to spin them around! But now let's do something interesting with them.
+3D digital outcrop models are cool. **Gee Whiz** is it fun to spin them around. Now let's do something with them.
 
 ## Dependencies
 
