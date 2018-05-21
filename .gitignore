@@ -2,6 +2,7 @@
 *.stl
 *.pickle
 *.png
+!media/*.png
 
 *checkpoints*
 *pycache*
