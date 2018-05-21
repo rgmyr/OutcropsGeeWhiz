@@ -1,29 +1,30 @@
-# OutcropsGeeWhiz
-Agile Geoscience Hackathon project -- 5/18-5/20, 2018
+# Outcrops, Gee Whiz!
 
-Google Doc link - https://docs.google.com/document/d/1qtocbc2w58zsTUeD0vebKCMFN2Fmu7p1OyMW-Y1KUBI/edit# 
+3D digital outcrop models are cool. **Gee Whiz** is it fun to spin them around! But now let's do something interesting with them.
 
-## Github Usage
+## Dependencies
 
-To get started, clone the repo:
+- `numpy`
+- `matplotlib`
+- `sklearn`
 
-```bash
-$ git clone https://github.com/rgmyr/OutcropsGeeWhiz.git
-```
+To do shapefile line projection:
 
-To make changes, `add` all new changes + `commit` them + `pull` any updates + `push` your changes. **ALWAYS pull before you push!**(But after you commit your changes locally.)
+- [pyproj](https://github.com/jswhit/pyproj)
 
-```bash
-$ git add -A
-$ git commit -m "brief message describing changes"
-$ git pull origin master
-$ git push origin master
-```
+To use mesh data instead of point cloud:
 
-Strictly speaking, if we're all only working on one branch, the `origin master` arguments are unnecessary, but I usually just use them anyway.
+- [PyMesh](https://github.com/qnzhou/PyMesh) (Fair warning: install requires building a lot of `C++` dependencies.)
 
-## Data Parsing
+## Organization
 
-[PyMesh](https://github.com/qnzhou/PyMesh)
+`data/`: Input data, and slice frames directory (the latter not uploaded).
 
-[pycollada](https://github.com/pycollada/pycollada)
+`media`: Presentation slides, figures, movies, and simple `ffmpeg` movie generation script.
+
+`notebooks/`: Jupyter notebooks. See `README` inside for more info.
+
+`models/`: `pickle`d `sklearn.ensemble.AdaBoost` model for HSV $\rightarrow$ class prediction
+
+`mesh_process.py`: Data loading + point cloud slicing + some convenience functions. Should add some things, rename, and have `PyMesh` functionality in a seperate module.
+
