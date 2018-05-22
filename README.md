@@ -1,26 +1,28 @@
 # Outcrops, Gee Whiz!
 
-3D digital outcrop models are cool. **Gee Whiz** is it fun to spin them around. Now let's do something with them.
+3D digital outcrop models are cool. **Gee Whiz** is it fun to spin them around! Now let's do something useful with them.
 
 ## Dependencies
+
+Base: 
 
 - `numpy`
 - `matplotlib`
 - `sklearn`
 
-To do shapefile line projection:
+To do shapefile line projections:
 
 - [pyproj](https://github.com/jswhit/pyproj)
 
-To use mesh data instead of point cloud:
+To use `mesh` data instead of `[XYZ,RGBA]` point cloud:
 
-- [PyMesh](https://github.com/qnzhou/PyMesh) (Fair warning: install requires building a lot of `C++` dependencies.)
+- [PyMesh](https://github.com/qnzhou/PyMesh) (Fair Warning: install requires building *a lot* of `C++` dependencies.)
 
 ## Organization
 
 `data/`: Input data, and slice frames directory (the latter not uploaded).
 
-`media`: Presentation slides, figures, movies, and simple `ffmpeg` movie generation script.
+`media/`: Presentation slides, figures, movies, and simple `ffmpeg` movie generation script.
 
 `notebooks/`: Jupyter notebooks. See `README` inside for more info.
 
