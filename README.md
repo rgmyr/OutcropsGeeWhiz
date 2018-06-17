@@ -1,6 +1,8 @@
+**NOTE ON UPDATES**: we are working on improvements and extensions to this weekend hackathon project in a private repository for now. This code will likely be open-sourced at a later date. Planned features include data stucture/format conversions, facies boundary modeling, visualization utilities, and optional GPU acceleration of raw point cloud processing,
+
 # Outcrops, Gee Whiz!
 
-3D digital outcrop models are cool. **Gee Whiz** is it fun to spin them around! Now let's do something useful with them.
+3D digital outcrop models are cool. **Gee Whiz** is it fun to spin them around! Now let's do something interesting with them.
 
 ## Dependencies
 
