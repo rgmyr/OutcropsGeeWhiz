@@ -1,4 +1,4 @@
-**NOTE ON UPDATES**: we are working on improvements and extensions to this weekend hackathon project in a private repository for now. This code will likely be open-sourced at a later date. Planned features include data stucture/format conversions, facies boundary modeling, visualization utilities, and optional GPU acceleration of raw point cloud processing,
+**NOTE ON UPDATES**: we are working on improvements and extensions to this weekend hackathon project in a private repository for now. This code will likely be open-sourced at a later date. Planned features include data stucture/format conversions, facies boundary modeling, visualization utilities, and optional GPU acceleration of raw point cloud processing.
 
 # Outcrops, Gee Whiz!
 
